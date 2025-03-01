@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+// Função para simular o movimento da Torre
+void movimentoTorre(int casas) {
+    for (int i = 1; i <= casas; i++) {
+        printf("Direita\n");
+    }
+}
+
+// Função para simular o movimento do Bispo (diagonal)
+void movimentoBispo(int casas) {
+    for (int i = 1; i <= casas; i++) {
+        printf("Cima Direita\n");
+    }
+}
+
+// Função para simular o movimento da Rainha
+void movimentoRainha(int casas) {
+    for (int i = 1; i <= casas; i++) {
+        printf("Esquerda\n");
+    }
+}
+
+// Função recursiva para o movimento da Torre
+void movimentoTorreRecursivo(int casas) {
+    if (casas > 0) {
+        printf("Direita\n");
+        movimentoTorreRecursivo(casas - 1);  // Recursão para o próximo movimento
+    }
+}
+
+// Função recursiva para o movimento do Bispo
+void movimentoBispoRecursivo(int casas) {
+    if (casas > 0) {
+        printf("Cima Direita\n");
+        movimentoBispoRecursivo(casas - 1);  // Recursão para o próximo movimento
+    }
+}
+
+// Função recursiva para o movimento da Rainha
+void movimentoRainhaRecursivo(int casas) {
+    if (casas > 0) {
+        printf("Esquerda\n");
+        movimentoRainhaRecursivo(casas - 1);  // Recursão para o próximo movimento
+    }
+}
+
+// Função para o movimento do Cavalo
+void movimentoCavalo() {
+    // Loop aninhado para simular o movimento do Cavalo em "L"
+    for (int i = 1; i <= 2; i++) {
+        printf("Baixo\n");
+    }
+    for (int j = 1; j <= 1; j++) {
+        printf("Esquerda\n");
+    }
+}
+
+int main() {
+    // Nível Novato
+    printf("Movimento da Torre (5 casas para a direita):\n");
+    movimentoTorre(5);  // Movimento da Torre com um loop simples
+    printf("\n");
+
+    printf("Movimento do Bispo (5 casas diagonal para cima e direita):\n");
+    movimentoBispo(5);  // Movimento do Bispo com um loop simples
+    printf("\n");
+
+    printf("Movimento da Rainha (8 casas para a esquerda):\n");
+    movimentoRainha(8);  // Movimento da Rainha com um loop simples
+    printf("\n");
+
+    // Nível Aventureiro
+    printf("Movimento do Cavalo (2 casas para baixo e 1 para a esquerda):\n");
+    movimentoCavalo();  // Movimento do Cavalo com loops aninhados
+    printf("\n");
+
+    // Nível Mestre
+    printf("Movimento da Torre (5 casas para a direita) - Recursivo:\n");
+    movimentoTorreRecursivo(5);  // Movimento da Torre com recursão
+    printf("\n");
+
+    printf("Movimento do Bispo (5 casas diagonal para cima e direita) - Recursivo:\n");
+    movimentoBispoRecursivo(5);  // Movimento do Bispo com recursão
+    printf("\n");
+
+    printf("Movimento da Rainha (8 casas para a esquerda) - Recursivo:\n");
+    movimentoRainhaRecursivo(8);  // Movimento da Rainha com recursão
+    printf("\n");
+
+    return 0;
+}
